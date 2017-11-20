@@ -1,24 +1,48 @@
 {
     "twitter": {
-        "twitterToken": "",
-        "twitterConsumerKey": "",
-        "twitterTokenSecret": "",
-        "twitterConsumerSecret": ""
+        "twitterToken": "932702563425665024-fUUycczeTqK0HSwTurxqDEBIJKBwFFv",
+        "twitterConsumerKey": "NPzKtB1mYsVVV3jPHOBFioXcR",
+        "twitterTokenSecret": "iH6M98m6B9tqQyqDK1zHkBWNc2QcImWFxhPobel79cxUY",
+        "twitterConsumerSecret": "Vta4M9VI6LCmXyo5rGMWYoqd6IJfILNlr63f7B1n3JEZPPedq4"
     },
-    "tweetTo": "",
-    "internetSpeed": "50",
+    "tweetTo": "@xfinity @comcastWA @comcast #xfinity @comcastcares",
+    "internetSpeed": "1000",
     "tweetThresholds": {
         "5": [
             "Hey {tweetTo} I'm paying for {internetSpeed}Mb/s but getting only {downloadResult} Mb/s?!? Shame.",
             "Oi! {tweetTo} $100+/month for {internetSpeed}Mbit/s and I only get {downloadResult} Mbit/s? How does that seem fair?"
         ],
         "12.5": [
+            "Hey {tweetTo} I'm paying for {internetSpeed}Mb/s but getting only {downloadResult} Mb/s?!? Shame.",
+            "Oi! {tweetTo} $100+/month for {internetSpeed}Mbit/s and I only get {downloadResult} Mbit/s? How does that seem fair?"
+        ],
+        "50": [
+            "Hey {tweetTo} I'm paying for {internetSpeed}Mb/s but getting only {downloadResult} Mb/s?!? Shame.",
+            "Oi! {tweetTo} $100+/month for {internetSpeed}Mbit/s and I only get {downloadResult} Mbit/s? How does that seem fair?"
+        ],
+        "99": [
             "Uhh {tweetTo} for $100+/month I expect better than {downloadResult}Mbit/s when I'm paying for {internetSpeed}Mbit/s. Fix your network!",
             "Hey {tweetTo} why am I only getting {downloadResult}Mb/s when I pay for {internetSpeed}Mb/s? $100+/month for this??"
         ],
-        "25": [
+        "150": [
+            "Uhh {tweetTo} for $100+/month I expect better than {downloadResult}Mbit/s when I'm paying for {internetSpeed}Mbit/s. Fix your network!",
+            "Hey {tweetTo} why am I only getting {downloadResult}Mb/s when I pay for {internetSpeed}Mb/s? $100+/month for this??"
+        ],
+        "250": [
+            "Uhh {tweetTo} for $100+/month I expect better than {downloadResult}Mbit/s when I'm paying for {internetSpeed}Mbit/s. Fix your network!",
+            "Hey {tweetTo} why am I only getting {downloadResult}Mb/s when I pay for {internetSpeed}Mb/s? $100+/month for this??"
+        ],
+        "500": [
+            "Uhh {tweetTo} for $100+/month I expect better than {downloadResult}Mbit/s when I'm paying for {internetSpeed}Mbit/s. Fix your network!",
+            "Hey {tweetTo} why am I only getting {downloadResult}Mb/s when I pay for {internetSpeed}Mb/s? $100+/month for this??"
+        ],
+        "750": [
+            "Well {tweetTo} I guess {downloadResult}Mb/s is better than nothing, still not worth $100/mnth when I expect {internetSpeed}Mb/s"
+        ],
+        "900": [
             "Well {tweetTo} I guess {downloadResult}Mb/s is better than nothing, still not worth $100/mnth when I expect {internetSpeed}Mb/s"
         ]
+
     },
     "log": {
         "type": "csv",

@@ -96,22 +96,31 @@ class SpeedTest(threading.Thread):
         self.logger = Logger(self.config['log']['type'], { 'filename': self.config['log']['files']['speed'] })
 
     def run(self):
+        print('FLAG I')
         speedTestResults = self.doSpeedTest()
+        print('FLAG H')
         self.logSpeedTestResults(speedTestResults)
+        print('FLAG G')
         self.tweetResults(speedTestResults)
+        print('FLAG F')
 
     def doSpeedTest(self):
         # run a speed test
-        result = os.popen("/usr/local/bin/speedtest-cli --simple").read()
+        # result = os.popen("/usr/local/bin/speedtest-cli --simple").read()
+        result = os.popen("speedtest-cli --simple").read()
+        
         if 'Cannot' in result:
+            print('hello')
             return { 'date': datetime.now(), 'uploadResult': 0, 'downloadResult': 0, 'ping': 0 }
-
+        else:
+            print('hello2')
         # Result:
         # Ping: 529.084 ms
         # Download: 0.52 Mbit/s
         # Upload: 1.79 Mbit/s
-
         resultSet = result.split('\n')
+        print(resultSet)
+        
         pingResult = resultSet[0]
         downloadResult = resultSet[1]
         uploadResult = resultSet[2]
@@ -127,19 +136,26 @@ class SpeedTest(threading.Thread):
 
 
     def tweetResults(self, speedTestResults):
+        print('FLAG E')
         thresholdMessages = self.config['tweetThresholds']
         message = None
         for (threshold, messages) in thresholdMessages.items():
+            print('FLAG D')
             threshold = float(threshold)
+            print(threshold)
+            print(speedTestResults)
             if speedTestResults['downloadResult'] < threshold:
+                print('FLAG C')
                 message = messages[random.randint(0, len(messages) - 1)].replace('{tweetTo}', self.config['tweetTo']).replace('{internetSpeed}', self.config['internetSpeed']).replace('{downloadResult}', str(speedTestResults['downloadResult']))
 
         if message:
+            print('FLAG B')
             api = twitter.Api(consumer_key=self.config['twitter']['twitterConsumerKey'],
                             consumer_secret=self.config['twitter']['twitterConsumerSecret'],
                             access_token_key=self.config['twitter']['twitterToken'],
                             access_token_secret=self.config['twitter']['twitterTokenSecret'])
             if api:
+                print('FLAG A')
                 status = api.PostUpdate(message)
 
 class DaemonApp():
